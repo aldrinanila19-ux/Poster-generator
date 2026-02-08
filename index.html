@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Poster Generator</h1>
+        <p>In Loving Memory</p>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <input type="file" id="photo" accept="image/*">
+            <input type="text" placeholder="Full Name" id="name">
+            <input type="text" placeholder="Address" id="address">
+            
+            <label>Birth Date</label>
+            <input type="date" id="birth">
+            
+            <label>Death Date</label>
+            <input type="date" id="death">
+            
+            <label>Bible Verse</label>
+            <select id="verseSelect">
+                <option value="">-- Select a Bible Verse --</option>
+                <option value="Blessed are those who mourn, for they shall be comforted. – Matthew 5:4">Matthew 5:4</option>
+                <option value="The Lord is my shepherd; I shall not want. – Psalm 23:1">Psalm 23:1</option>
+                <option value="I am the resurrection and the life. – John 11:25">John 11:25</option>
+            </select>
+            
+            <textarea id="customVerse" placeholder="Or write a custom Bible verse"></textarea>
+            
+            <label>Poster Background</label>
+            <select id="bgImageSelect">
+                <option value="">-- Select Background --</option>
+                <option value="bg1.png">Background 1</option>
+                <option value="bg2.png">Background 2</option>
+                <option value="bg3.png">Background 3</option>
+                <option value="bg4.png">Background 4</option>
+                <option value="bg5.png">Background 5</option>
+                <option value="bg6.png">Background 6</option>
+                <option value="bg7.png">Background 7</option>
+                <option value="bg8.png">Background 8</option>
+            </select>
+            
+            <button onclick="downloadPoster()">Download Poster</button>
+        </section>
+
+        <section class="preview-section">
+            <div id="poster">
+                <div class="poster-content">
+                    <div class="cross">✝</div>
+                    <p class="quote">IN LOVING MEMORY OF</p>
+                    <div class="photo-container">
+                        <img id="previewPhoto" src="https://via.placeholder.com/180" alt="Memorial Photo">
+                    </div>
+                    <h2 id="previewName">Full Name</h2>
+                    <p id="previewDates">January 1, 1950 – January 1, 2024</p>
+                    <p id="previewAddress">Address</p>
+                    <blockquote id="previewVerse">Blessed are those who mourn, for they shall be comforted. – Matthew 5:4</blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
